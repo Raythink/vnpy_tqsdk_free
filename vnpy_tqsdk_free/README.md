@@ -21,7 +21,7 @@ TqSdk中最多可以获取每个K线序列的最后8000根K线，无论哪个周
 
 ## 安装
 
-安装需要基于2.6.0版本以上的[VN Studio](https://www.vnpy.com)。
+安装需要基于3.9.1版本以上的[VN Studio](https://www.vnpy.com)。
 
 在vnpy_tqsdk_free目录下，在cmd中运行：
 
@@ -36,5 +36,5 @@ python setup.py install
 |名称|含义|必填|举例|
 |---------|----|---|---|
 |datafeed.name|名称|是|tqsdk_free|
-|datafeed.username|用户名|是|test|
-|datafeed.password|密码|是|12345678|
+|datafeed.username|用户名|是|(注册用户)|
+|datafeed.password|密码|是|(pass)|
