@@ -33,9 +33,23 @@ class TqsdkDatafeed(BaseDatafeed):
         """"""
         self.username: str = SETTINGS["datafeed.username"]
         self.password: str = SETTINGS["datafeed.password"]
+        
+        self.inited: bool = False
 
-    def query_bar_history(self, req: HistoryRequest) -> Optional[List[BarData]]:
+    def init(self, output: Callable = print) -> bool:
+        """初始化"""
+        if self.inited:
+            return True
+
+        self.inited = True
+
+        return True
+        
+    def query_bar_history(self, req: HistoryRequest, output: Callable = print) -> Optional[List[BarData]]:
         """查询k线数据"""
+        if not self.inited:
+            self.init(output)
+                
         # 初始化API
         try:
             api = TqApi(auth=TqAuth(self.username, self.password))
